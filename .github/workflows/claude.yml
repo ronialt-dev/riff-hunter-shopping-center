@@ -33,4 +33,7 @@ jobs:
       - name: Run Claude Code
         uses: anthropics/claude-code-action@v1
         with:
+          # Set ONE of these repo secrets. The API key is billed per use on
+          # console.anthropic.com and is not affected by subscription limits.
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
